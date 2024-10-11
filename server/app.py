@@ -10,12 +10,15 @@ def show_session(key):
 
     session["hello"] = session.get("hello") or "World"
     session["goodnight"] = session.get("goodnight") or "Moon"
+    session["ryne"] = session.get("mbuthia") or "sakara"
+    session["don"] = session.get("don") 
+
 
     response = make_response(jsonify({
         'session': {
             'session_key': key,
-            'session_value': session[key],
-            'session_accessed': session.accessed,
+            'session_value': session[key], 
+            'session_accessed': session.accessed
         },
         'cookies': [{cookie: request.cookies[cookie]}
             for cookie in request.cookies],
